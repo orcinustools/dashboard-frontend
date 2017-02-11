@@ -386,10 +386,12 @@
             <!--I/O Chart start-->
             <section class="panel">
               <header class="panel-heading">
-                I/O Chart
+                I/O Usage
               </header>
               <div class="panel-body">
-                <canvas id="linechart" width="600" height="200"></canvas>
+                <div class="chart-container">
+                  <div class="io-chart"></div>
+                </div>
               </div>
             </section>
             <!--I/O Chart end-->
@@ -401,7 +403,9 @@
                 CPU Usage
               </header>
               <div class="panel-body">
-                <canvas id="linechart" width="600" height="200"></canvas>
+                <div class="chart-container">
+                  <div class="cpu-chart"></div>
+                </div>
               </div>
             </section>
             <!--I/O Chart end-->
@@ -413,7 +417,9 @@
                 Memory Usage
               </header>
               <div class="panel-body">
-                <canvas id="linechart" width="600" height="200"></canvas>
+                <div class="chart-container">
+                  <div class="mem-chart"></div>
+                </div>
               </div>
             </section>
             <!--I/O Chart end-->
@@ -446,6 +452,9 @@
   <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
   <script src="js/plugins/chart.js" type="text/javascript"></script>
+
+  <!--flot chart-->
+  <script src="js/plugins/flot/jquery.flot.js" type="text/javascript"></script>
 
   <!-- datepicker
   <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
@@ -489,32 +498,231 @@
       radioClass: 'iradio_flat-grey'
     });
   </script>
-  <script type="text/javascript">
-      $(function () {
-        "use strict";
-        //BAR CHART
-        var data = {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-            {
-              label: "My First dataset",
-              fillColor: "rgba(220,220,220,0.2)",
-              strokeColor: "rgba(220,220,220,1)",
-              pointColor: "rgba(220,220,220,1)",
-              pointStrokeColor: "#fff",
-              pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(220,220,220,1)",
-              data: [65, 59, 80, 81, 56, 55, 40]
-            }
-          ]
-        };
-        new Chart(document.getElementById("linechart").getContext("2d")).Line(data, {
-          responsive: true,
-          maintainAspectRatio: false,
-        });
 
-      });
-            // Chart.defaults.global.responsive = true;
+  <!-- flot chart with realtime data -->
+
+  <!-- io-chart -->
+  <script type="text/javascript">
+
+  $(function() {
+
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+
+    var data = [],
+      totalPoints = 300;
+
+    function getRandomData() {
+
+      if (data.length > 0)
+        data = data.slice(1);
+
+      // Do a random walk
+
+      while (data.length < totalPoints) {
+
+        var prev = data.length > 0 ? data[data.length - 1] : 50,
+          y = prev + Math.random() * 10 - 5;
+
+        if (y < 0) {
+          y = 0;
+        } else if (y > 100) {
+          y = 100;
+        }
+
+        data.push(y);
+      }
+
+      // Zip the generated y values with the x values
+
+      var res = [];
+      for (var i = 0; i < data.length; ++i) {
+        res.push([i, data[i]])
+      }
+
+      return res;
+    }
+
+    // Set up the control widget
+
+    var updateInterval = 30;
+
+    var plot = $.plot(".io-chart", [ getRandomData() ], {
+      series: {
+        shadowSize: 0 // Drawing is faster without shadows
+      },
+      yaxis: {
+        min: 0,
+        max: 100
+      },
+      xaxis: {
+        show: false
+      }
+    });
+
+    function update() {
+
+      plot.setData([getRandomData()]);
+
+      // Since the axes don't change, we don't need to call plot.setupGrid()
+
+      plot.draw();
+      setTimeout(update, updateInterval);
+    }
+
+    update();
+
+  });
+
+  </script>
+
+  <!-- cpu-chart -->
+  <script type="text/javascript">
+
+  $(function() {
+
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+
+    var data = [],
+      totalPoints = 300;
+
+    function getRandomData() {
+
+      if (data.length > 0)
+        data = data.slice(1);
+
+      // Do a random walk
+
+      while (data.length < totalPoints) {
+
+        var prev = data.length > 0 ? data[data.length - 1] : 50,
+          y = prev + Math.random() * 10 - 5;
+
+        if (y < 0) {
+          y = 0;
+        } else if (y > 100) {
+          y = 100;
+        }
+
+        data.push(y);
+      }
+
+      // Zip the generated y values with the x values
+
+      var res = [];
+      for (var i = 0; i < data.length; ++i) {
+        res.push([i, data[i]])
+      }
+
+      return res;
+    }
+
+    // Set up the control widget
+
+    var updateInterval = 30;
+
+    var plot = $.plot(".cpu-chart", [ getRandomData() ], {
+      series: {
+        shadowSize: 0 // Drawing is faster without shadows
+      },
+      yaxis: {
+        min: 0,
+        max: 100
+      },
+      xaxis: {
+        show: false
+      }
+    });
+
+    function update() {
+
+      plot.setData([getRandomData()]);
+
+      // Since the axes don't change, we don't need to call plot.setupGrid()
+
+      plot.draw();
+      setTimeout(update, updateInterval);
+    }
+
+    update();
+
+  });
+
+  </script>
+  <!-- mem-chart -->
+  <script type="text/javascript">
+
+  $(function() {
+
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+
+    var data = [],
+      totalPoints = 300;
+
+    function getRandomData() {
+
+      if (data.length > 0)
+        data = data.slice(1);
+
+      // Do a random walk
+
+      while (data.length < totalPoints) {
+
+        var prev = data.length > 0 ? data[data.length - 1] : 50,
+          y = prev + Math.random() * 10 - 5;
+
+        if (y < 0) {
+          y = 0;
+        } else if (y > 100) {
+          y = 100;
+        }
+
+        data.push(y);
+      }
+
+      // Zip the generated y values with the x values
+
+      var res = [];
+      for (var i = 0; i < data.length; ++i) {
+        res.push([i, data[i]])
+      }
+
+      return res;
+    }
+
+    // Set up the control widget
+
+    var updateInterval = 30;
+
+    var plot = $.plot(".mem-chart", [ getRandomData() ], {
+      series: {
+        shadowSize: 0 // Drawing is faster without shadows
+      },
+      yaxis: {
+        min: 0,
+        max: 100
+      },
+      xaxis: {
+        show: false
+      }
+    });
+
+    function update() {
+
+      plot.setData([getRandomData()]);
+
+      // Since the axes don't change, we don't need to call plot.setupGrid()
+
+      plot.draw();
+      setTimeout(update, updateInterval);
+    }
+
+    update();
+
+  });
+
   </script>
 </body>
 
