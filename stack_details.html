@@ -282,7 +282,7 @@
             <img src="img/26115.jpg" class="img-circle" alt="User Image" />
           </div>
           <div class="pull-left info">
-            <p>Hello, Jane</p>
+            <p>Hello, Orcers</p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
@@ -303,7 +303,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
           <li class="active">
-            <a href="#">
+            <a href="index.html">
               <i class="fa fa-dashboard"></i> <span>Overview</span>
             </a>
           </li>
@@ -350,93 +350,115 @@
 
       <!-- Main content -->
       <section class="content">
-        
         <section class="content-header">
-          <h1>DASHBOARD</h1>
+          <h1>
+            Wordpress-app
+          </h1>
           <ol class="breadcrumb">
-            <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">STACKS</a></li>
+            <li class="active">Wordpress-app</li>
           </ol>
         </section>
 
-        <div class="row" style="margin-bottom:5px;">
-
-          <div class="col-md-4">
-            <div class="sm-st clearfix">
-              <span class="sm-st-icon st-red"><i class="fa fa-server"></i></span>
-              <div class="sm-st-info">
-                <span>1</span> Stack Running
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="sm-st clearfix">
-              <span class="sm-st-icon st-violet"><i class="fa fa-cubes"></i></span>
-              <div class="sm-st-info">
-                <span>2</span> Services Running
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="sm-st clearfix">
-              <span class="sm-st-icon st-blue"><i class="fa fa-cube"></i></span>
-              <div class="sm-st-info">
-                <span>2</span> Containers Running
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Main row -->
         <div class="row">
-
-          <div class="col-md-12">
-            <!--I/O Chart start-->
-            <section class="panel">
+          <div class="col-xs-12">
+            <div class="panel">
               <header class="panel-heading">
-                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> Network Usage
+                General
               </header>
               <div class="panel-body">
-                <div class="chart-container">
-                  <canvas id="io-chart" height="60"></canvas>
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>STACK NAME</b></div>
+                    <div class="col-sm-10">Wordpress-app</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>CREATED AT</b></div>
+                    <div class="col-sm-10">Mon Feb 13 2017 17:59:04 GMT+0700 (WIB)</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>CREATED AT</b></div>
+                    <div class="col-sm-10">Mon Feb 13 2017 17:59:04 GMT+0700 (WIB)</div>
+                  </div>
                 </div>
+              </div><!-- /.box-body -->
+              <div class="panel-footer">
+                <button class="btn btn-primary"><i class="fa fa-download fa-fw" aria-hidden="true"></i>  Download Orcinus File</button>
               </div>
-            </section>
-            <!--I/O Chart end-->
+            </div><!-- /.box -->
           </div>
-          <div class="col-md-12">
-            <!--I/O Chart start-->
-            <section class="panel">
-              <header class="panel-heading">
-                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> CPU Usage
-              </header>
-              <div class="panel-body">
-                <div class="chart-container">
-                  <canvas id="cpu-chart" height="60"></canvas>
-                </div>
-              </div>
-            </section>
-            <!--I/O Chart end-->
-          </div>
-          <div class="col-md-12">
-            <!--I/O Chart start-->
-            <section class="panel">
-              <header class="panel-heading">
-                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> Memory Usage
-              </header>
-              <div class="panel-body">
-                <div class="chart-container">
-                  <canvas id="mem-chart" height="60"></canvas>
-                </div>
-              </div>
-            </section>
-            <!--I/O Chart end-->
-          </div>
-
         </div>
 
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Services
+              </header>
+              <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Service Name</th>
+                      <th>Status</th>
+                      <th>Info</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> wp-app</td>
+                      <td><span class="label label-success">RUNNING</span></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-cube fa-fw" aria-hidden="true"></i> 1 Container</li>
+                          <li><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volumes</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-warning btn-sm list-stack-action"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-info btn-sm list-stack-action"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-danger btn-sm list-stack-action"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> wp-db</td>
+                      <td><span class="label label-success">RUNNING</span></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-cube fa-fw" aria-hidden="true"></i> 1 Container</li>
+                          <li><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volumes</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-warning btn-sm list-stack-action"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-info btn-sm list-stack-action"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-danger btn-sm list-stack-action"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+              <div class="panel-footer">
+                <button class="btn btn-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>  Add New Service</button>
+              </div>
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Endpoints
+              </header>
+              <div class="panel-body">
+                
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div>
+        </div>
       </section>
       <!-- /.content -->
       
@@ -513,336 +535,6 @@
     });
   </script>
 
-  <!-- flot chart with realtime data -->
-
-  <!-- io-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".io-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true,
-  //       mode: "time"
-  //       // tickFormatter: function(val, axis) {
-  //       //   var d = new Date(new Date() + val);
-  //       //   console.log(d);
-  //       //   return d.strftime("%A, %T");
-  //       // }
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-  //     plot.setupGrid();
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-  // });
-
-  </script> -->
-
-  <!-- cpu-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".cpu-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-
-  //     plot.setupGrid(); // updating the grid
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-
-  // });
-
-  </script> -->
-  <!-- mem-chart -->
-<!--   <script type="text/javascript">
-
-    $(function() {
-
-      // We use an inline data source in the example, usually data would
-      // be fetched from a server
-
-      var data = [],
-        totalPoints = 300;
-        var j = [];
-
-      function getRandomData() {
-
-        if (data.length > 0)
-          data = data.slice(1);
-
-        // Do a random walk
-
-        while (data.length < totalPoints) {
-
-          var prev = data.length > 0 ? data[data.length - 1] : 50,
-            y = prev + Math.random() * 10 - 5;
-
-          if (y < 0) {
-            y = 0;
-          } else if (y > 100) {
-            y = 100;
-          }
-
-          data.push(y);
-        }
-
-        // Zip the generated y values with the x values
-
-        var res = [];
-        for (var i = 0; i < data.length; ++i) {
-          res.push([j++, data[i]])
-        }
-
-        return res;
-      }
-
-      // Set up the control widget
-
-      var updateInterval = 3000;
-
-      var plot = $.plot(".mem-chart", [ getRandomData() ], {
-        series: {
-          shadowSize: 0 // Drawing is faster without shadows
-        },
-        yaxis: {
-          min: 0,
-          max: 100
-        },
-        xaxis: {
-          show: true
-        }
-      });
-
-      function update() {
-
-        plot.setData([getRandomData()]);
-        plot.setupGrid();
-
-        // Since the axes don't change, we don't need to call plot.setupGrid()
-
-        plot.draw();
-        setTimeout(update, updateInterval);
-      }
-
-      update();
-    });
-
-  </script> -->
-
-  <!-- chart js graph -->
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("io-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- CPU chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("cpu-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("mem-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-</body>
+ </body>
 
 </html>

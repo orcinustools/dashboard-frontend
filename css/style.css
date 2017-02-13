@@ -787,6 +787,11 @@ border-left: 1em solid rgb(238, 238, 238);
 border-top: 1.5em solid rgba(0, 0, 0, 0);
 content: '';
 }
+.right-side .content-header h1 {
+  font-size: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
 .right-side > .content-header > .breadcrumb > li > a {
   color: #444;
   text-decoration: none;
@@ -2954,6 +2959,12 @@ vertical-align: top;
   /*border-top: 1px solid #333;
   border-bottom: 0px solid #444;*/
 }
+.skin-black .sidebar > .sidebar-menu > li.nav-header {
+  color: #eee;
+  font-size: .75em;
+  padding: 12px 5px 12px 15px;
+  text-transform: uppercase;
+}
 .skin-black .sidebar > .sidebar-menu > li:first-of-type {
   border-top: 1px solid #444;
 }
@@ -4219,12 +4230,42 @@ padding: 6px 10px;
   background-color: #23b7e5;
 }
 
-.io-chart, .cpu-chart, .mem-chart {
-  width: 100%;
-  height: 200px;
+.chart-container {
+  width: 100% !important;
 }
 
-.chart-container {
-  /*width: 100%;*/
-  height: 100%;
+/*=====*/
+
+.table-stack-list tr {
+  height: 6.5em;
+}
+.table-stack-list tr td {
+  vertical-align: middle !important;
+}
+
+.table-head {
+  height: 2em;
+}
+
+.list-child {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0px;
+}
+
+.list-child li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.list-child li > i {
+  margin-right: 5px;
+}
+
+.list-stack-action {
+  margin-right: 10px;
+}
+
+.list-stack-action:last {
+  margin-right: 0px;
 }
