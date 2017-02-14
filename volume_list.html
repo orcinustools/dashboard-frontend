@@ -318,12 +318,12 @@
               <i class="fa fa-cubes"></i> <span>Services</span>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="container_list.html">
               <i class="fa fa-cube"></i> <span>Containers</span>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="volume_list.html">
               <i class="fa fa-hdd-o"></i> <span>Volumes</span>
             </a>
@@ -352,11 +352,11 @@
       <section class="content">
         <section class="content-header">
           <h1>
-            CONTAINERS
+            VOLUMES
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.html">HOME</a></li>
-            <li class="active">CONTAINERS</li>
+            <li class="active">VOLUMES</li>
           </ol>
         </section>
 
@@ -364,7 +364,7 @@
           <div class="col-xs-12">
             <div class="panel">
               <header class="panel-heading">
-                <i class="fa fa-th-list" aria-hidden="true"></i> List
+                <i class="fa fa-th-list fa-fw" aria-hidden="true"></i> Volume List
               </header>
               <div class="panel-body table-responsive">
 
@@ -373,53 +373,44 @@
                     <tr>
                       <th>ID</th>
                       <th>Name</th>
-                      <th>Status</th>
-                      <th>Image</th>
-                      <th>Info</th>
-                      <th>Action</th>
+                      <th>Size</th>
+                      <th>Type</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody class="table-stack-list">
                     <tr>
                       <td>asfasdfasd</td>
-                      <td><a href="container_details.html">wp-app.1</a></td>
-                      <td><span class="label label-success">RUNNING</span></td>
+                      <td><a href="container_details.html">wp-logs</a></td>
+                      <td>2GB</td>
+                      <td>nfs</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
                       <td>
-                        <i class="fa fa-tag fa-fw" aria-hidden="true"></i> orcinus/wordpress:latest
-                      </td>
-                      <td>
-                        <ul class="list-child">
-                          <li><i class="fa fa-server fa-fw" aria-hidden="true"></i> Wordpress-app</li>
-                          <li><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> wp-app</li>
-                          <li><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volume</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-warning btn-sm list-stack-action"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-info btn-sm list-stack-action"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-danger btn-sm list-stack-action"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-default btn-sm list-stack-action"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <button class="btn btn-default btn-sm list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
                       </td>
                     </tr>
                     <tr>
                       <td>asfasdfasd</td>
-                      <td><a href="container_details.html">wp-db.1</a></td>
-                      <td><span class="label label-success">RUNNING</span></td>
+                      <td><a href="container_details.html">db-data</a></td>
+                      <td>2GB</td>
+                      <td>nfs</td>
+                      <td>/data/mysql</td>
+                      <td>/var/lib/mysql/data</td>
                       <td>
-                        <i class="fa fa-tag fa-fw" aria-hidden="true"></i> orcinus/mysql:latest
-                      </td>
-                      <td>
-                        <ul class="list-child">
-                          <li><i class="fa fa-server fa-fw" aria-hidden="true"></i> Wordpress-app</li>
-                          <li><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> wp-db</li>
-                          <li><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volume</li>
-                        </ul>
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-warning btn-sm list-stack-action"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-info btn-sm list-stack-action"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-danger btn-sm list-stack-action"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-default btn-sm list-stack-action"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                        <button class="btn btn-default btn-sm list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
                       </td>
                     </tr>
     
