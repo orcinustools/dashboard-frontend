@@ -519,335 +519,69 @@
     });
   </script>
 
-  <!-- flot chart with realtime data -->
 
-  <!-- io-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".io-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true,
-  //       mode: "time"
-  //       // tickFormatter: function(val, axis) {
-  //       //   var d = new Date(new Date() + val);
-  //       //   console.log(d);
-  //       //   return d.strftime("%A, %T");
-  //       // }
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-  //     plot.setupGrid();
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-  // });
-
-  </script> -->
-
-  <!-- cpu-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".cpu-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-
-  //     plot.setupGrid(); // updating the grid
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-
-  // });
-
-  </script> -->
-  <!-- mem-chart -->
-<!--   <script type="text/javascript">
-
-    $(function() {
-
-      // We use an inline data source in the example, usually data would
-      // be fetched from a server
-
-      var data = [],
-        totalPoints = 300;
-        var j = [];
-
-      function getRandomData() {
-
-        if (data.length > 0)
-          data = data.slice(1);
-
-        // Do a random walk
-
-        while (data.length < totalPoints) {
-
-          var prev = data.length > 0 ? data[data.length - 1] : 50,
-            y = prev + Math.random() * 10 - 5;
-
-          if (y < 0) {
-            y = 0;
-          } else if (y > 100) {
-            y = 100;
-          }
-
-          data.push(y);
-        }
-
-        // Zip the generated y values with the x values
-
-        var res = [];
-        for (var i = 0; i < data.length; ++i) {
-          res.push([j++, data[i]])
-        }
-
-        return res;
+  <!-- Net I/O Usage using ChartJS-->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var count = 10;
+      var data = {
+          labels : ["1","2","3","4","5", "6", "7", "8", "9", "10"],
+          datasets : [
+            {
+              label: "Memory Usage",
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              data : [65,59,90,81,56,45,30,20,3,37]
+            }
+          ]
       }
 
-      // Set up the control widget
+      var updateData = function(oldData){
+        // selector untuk mengambil element labels dari variable data
+        var labels = oldData["labels"];
 
-      var updateInterval = 3000;
+        // selector untuk mengambil element datasets dari variable data
+        var dataSet = oldData["datasets"][0]["data"];
 
-      var plot = $.plot(".mem-chart", [ getRandomData() ], {
-        series: {
-          shadowSize: 0 // Drawing is faster without shadows
-        },
-        yaxis: {
-          min: 0,
-          max: 100
-        },
-        xaxis: {
-          show: true
+        // Menghapus labels awal pada axis s pada array labels
+        labels.shift();
+
+        count++;
+        //var timeStamp = new Date().get;
+
+        // menambahkan label baru pada axis x pada array labels
+        labels.push(count.toString());
+
+        // membuat sebuah data baru yang akan dimasukkan ke array labels
+        var newData = dataSet[9] + (20 - Math.floor(Math.random() * (41)));
+
+        // menambahkan data baru ke array dataset
+        dataSet.push(newData);
+
+        // menghapus data awal pada array dataset
+        dataSet.shift();
+      };
+
+      //Get the context of the canvas element we want to select
+      var ctx = document.getElementById("io-chart").getContext("2d");
+      var myNewChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          animation: false
         }
       });
+      //myNewChart.Line(data, optionsAnimation);  
 
-      function update() {
+      setInterval(function(){
+        updateData(data);
+        myNewChart.update();
+         }, 1000
+      );
 
-        plot.setData([getRandomData()]);
-        plot.setupGrid();
-
-        // Since the axes don't change, we don't need to call plot.setupGrid()
-
-        plot.draw();
-        setTimeout(update, updateInterval);
-      }
-
-      update();
     });
-
-  </script> -->
-
-  <!-- chart js graph -->
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("io-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- CPU chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("cpu-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("mem-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
   </script>
 </body>
 
