@@ -623,6 +623,73 @@
           </div>
         </div>
 
+        <!-- service list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Container List
+              </header>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Container Name</th>
+                      <th>Mountpoint</th>
+                      <th>Used</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-app.1</a></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> codeBase</li>
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> web-logs</li>
+                        </ul>
+                      </td>
+                      <td>150 MB of 2 GB</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-db.1</a></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> mysql-data</li>
+                        </ul>
+                      </td>
+                      <td>150 MB of 2 GB</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+
       </section>
       <!-- /.content -->
       
