@@ -361,50 +361,61 @@
 
         <div class="row" style="margin-bottom:5px;">
           
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
+          <div class="col-md-3">
+            <a href="stack_list.html">
+              <div class="thumbnail">
+                <img src="img/katalog/wordpress.png" alt="MySQL" class="img-responsive">
+                <div class="caption text-center">
+                  <h3>Wordpress</h3> 
+                  <p>
+                    The WordPress rich content management system can utilize plugins, widgets, and themes.
+                  </p>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
+          <div class="col-md-3">
+            <a href="stack_list.html">
+              <div class="thumbnail">
+                <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
+                <div class="caption text-center">
+                  <h3>MySQL 5.6</h3> 
+                  <p>
+                    MySQL is a widely used, open-source relational database management system (RDBMS).
+                  </p>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
+          <div class="col-md-3">
+            <a href="stack_list.html">
+              <div class="thumbnail">
+                <img src="img/katalog/golang.png" alt="MySQL" class="img-responsive">
+                <div class="caption text-center">
+                  <h3>Golang</h3> 
+                  <p>
+                    Go (golang) is a general purpose, higher-level, imperative programming language.
+                  </p>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
+          <div class="col-md-3">
+            <a href="stack_list.html">
+              <div class="thumbnail">
+                <img src="img/katalog/node.png" alt="MySQL" class="img-responsive">
+                <div class="caption text-center">
+                  <h3>NodeJS</h3> 
+                  <p>
+                    Node.js is a JavaScript-based platform for server-side and networking applications.
+                  </p>
                 </div>
               </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
 
         <!-- Main row -->
@@ -487,336 +498,6 @@
     });
   </script>
 
-  <!-- flot chart with realtime data -->
-
-  <!-- io-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".io-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true,
-  //       mode: "time"
-  //       // tickFormatter: function(val, axis) {
-  //       //   var d = new Date(new Date() + val);
-  //       //   console.log(d);
-  //       //   return d.strftime("%A, %T");
-  //       // }
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-  //     plot.setupGrid();
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-  // });
-
-  </script> -->
-
-  <!-- cpu-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".cpu-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-
-  //     plot.setupGrid(); // updating the grid
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-
-  // });
-
-  </script> -->
-  <!-- mem-chart -->
-<!--   <script type="text/javascript">
-
-    $(function() {
-
-      // We use an inline data source in the example, usually data would
-      // be fetched from a server
-
-      var data = [],
-        totalPoints = 300;
-        var j = [];
-
-      function getRandomData() {
-
-        if (data.length > 0)
-          data = data.slice(1);
-
-        // Do a random walk
-
-        while (data.length < totalPoints) {
-
-          var prev = data.length > 0 ? data[data.length - 1] : 50,
-            y = prev + Math.random() * 10 - 5;
-
-          if (y < 0) {
-            y = 0;
-          } else if (y > 100) {
-            y = 100;
-          }
-
-          data.push(y);
-        }
-
-        // Zip the generated y values with the x values
-
-        var res = [];
-        for (var i = 0; i < data.length; ++i) {
-          res.push([j++, data[i]])
-        }
-
-        return res;
-      }
-
-      // Set up the control widget
-
-      var updateInterval = 3000;
-
-      var plot = $.plot(".mem-chart", [ getRandomData() ], {
-        series: {
-          shadowSize: 0 // Drawing is faster without shadows
-        },
-        yaxis: {
-          min: 0,
-          max: 100
-        },
-        xaxis: {
-          show: true
-        }
-      });
-
-      function update() {
-
-        plot.setData([getRandomData()]);
-        plot.setupGrid();
-
-        // Since the axes don't change, we don't need to call plot.setupGrid()
-
-        plot.draw();
-        setTimeout(update, updateInterval);
-      }
-
-      update();
-    });
-
-  </script> -->
-
-  <!-- chart js graph -->
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("io-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- CPU chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("cpu-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("mem-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
 </body>
 
 </html>
