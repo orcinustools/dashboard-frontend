@@ -226,7 +226,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user"></i>
-              <span>Orcers <i class="caret"></i></span>
+              <span>Jane Doe <i class="caret"></i></span>
             </a>
             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
               <li class="dropdown-header text-center">Account</li>
@@ -282,7 +282,7 @@
             <img src="img/26115.jpg" class="img-circle" alt="User Image" />
           </div>
           <div class="pull-left info">
-            <p>Hello, Orcainer</p>
+            <p>Hello, Orcers</p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
@@ -323,13 +323,13 @@
               <i class="fa fa-cube"></i> <span>Containers</span>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="volume_list.html">
               <i class="fa fa-hdd-o"></i> <span>Volumes</span>
             </a>
           </li>
           <li class="nav-header">Community</li>
-          <li class="active">
+          <li>
             <a href="katalog_list.html">
               <i class="fa fa-book"></i> <span>Catalog</span>
             </a>
@@ -350,65 +350,277 @@
 
       <!-- Main content -->
       <section class="content">
-        
         <section class="content-header">
-          <h1>CATALOG</h1>
+          <h1>
+            wp-vol
+          </h1>
           <ol class="breadcrumb">
             <li><a href="index.html">HOME</a></li>
-            <li class="active">CATALOG</li>
+            <li><a href="volume_list.html">VOLUMES</a></li>
+            <li class="active">wp-logs</li>
           </ol>
         </section>
 
-        <div class="row" style="margin-bottom:5px;">
-          
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="row">
+          <div class="col-md-6 pull-right">
+            <div class="btn-group btn-group-justified" style="margin-bottom: 10px;" role="group" aria-label="...">
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
-                </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i> Update
+                </button>
               </div>
-            </div>
-          </a>
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
-                </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info">
+                  <i class="fa fa-cloud-download fa-fw" aria-hidden="true"></i> Backup Volume
+                </button>
               </div>
-            </div>
-          </a>
 
-          <a href="stack_list.html">
-            <div class="col-md-3">
-              <div class="sm-st clearfix">
-              <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
-                <div class="sm-st-info">
-                  <span>MySQL 5.6</span> Database Management System
-                </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-danger">
+                  <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> Terminate
+                </button>
               </div>
-            </div>
-          </a>
 
+            </div>
+          </div>
         </div>
 
-        <!-- Main row -->
         <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                General
+              </header>
+              <div class="panel-body">
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>VOLUME NAME</b></div>
+                    <div class="col-sm-10">wp-vol</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>SIZE</b></div>
+                    <div class="col-sm-10">
+                      2 GB
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>TYPE</b></div>
+                    <div class="col-sm-10">
+                      NFS
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>MOUNTPOINT</b></div>
+                    <div class="col-sm-10">3</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-2"><b>CREATED AT</b></div>
+                    <div class="col-sm-10">Mon Feb 13 2017 17:59:04 GMT+0700 (WIB)</div>
+                  </div>
+                </div>
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+        <!-- mountpoint list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Mountpoint List
+              </header>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Mountpoint Name</th>
+                      <!-- <th>Size</th> -->
+                      <!-- <th>Type</th> -->
+                      <th>Used</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> <a href="volume_details.html">codeBase</a></td>
+                      <!-- <td>2GB</td> -->
+                      <!-- <td>nfs</td> -->
+                      <td>2 MB of 2 GB</td>
+                      <td>/wp-vol/src/</td>
+                      <td>/var/www/wp-app/</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> <a href="volume_details.html">web-logs</a></td>
+                      <!-- <td>2GB</td> -->
+                      <!-- <td>nfs</td> -->
+                      <td>2 MB of 2 GB</td>
+                      <td>/wp-vol/logs/</td>
+                      <td>/var/nginx/logs/</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> <a href="volume_details.html">mysql-data</a></td>
+                      <!-- <td>2GB</td> -->
+                      <!-- <td>nfs</td> -->
+                      <td>2 MB of 2 GB</td>
+                      <td>/wp-vol/mysql-data/ </td>
+                      <td>/var/lib/mysql/</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+              <div class="panel-footer">
+                <button class="btn btn-success">
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i>  Add New Mountpoint
+                </button>
+              </div>
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+        <!-- stack list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Stack List
+              </header>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Stack Name</th>
+                      <th>Mountpoint</th>
+                      <th>Used</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td>
+                        <i class="fa fa-server fa-fw" aria-hidden="true"></i>
+                        <a href="volume_details.html">Wordpress-app</a>
+                      </td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> codeBase</li>
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> web-logs</li>
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> mysql-data</li>
+                        </ul>
+                      </td>
+                      <td>300 MB of 2 GB</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+        <!-- service list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Service List
+              </header>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Service Name</th>
+                      <th>Mountpoint</th>
+                      <th>Used</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-app</a></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> codeBase</li>
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> web-logs</li>
+                        </ul>
+                      </td>
+                      <td>150 MB of 2 GB</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-db</a></td>
+                      <td>
+                        <ul class="list-child">
+                          <li><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> mysql-data</li>
+                        </ul>
+                      </td>
+                      <td>150 MB of 2 GB</td>
+                      <td>/data/logs</td>
+                      <td>/var/nginx/logs</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div>
         </div>
 
       </section>
@@ -487,336 +699,6 @@
     });
   </script>
 
-  <!-- flot chart with realtime data -->
-
-  <!-- io-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".io-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true,
-  //       mode: "time"
-  //       // tickFormatter: function(val, axis) {
-  //       //   var d = new Date(new Date() + val);
-  //       //   console.log(d);
-  //       //   return d.strftime("%A, %T");
-  //       // }
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-  //     plot.setupGrid();
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-  // });
-
-  </script> -->
-
-  <!-- cpu-chart -->
-<!--   <script type="text/javascript">
-
-  // $(function() {
-
-  //   // We use an inline data source in the example, usually data would
-  //   // be fetched from a server
-
-  //   var data = [],
-  //     totalPoints = 300;
-  //   var j = [];
-
-  //   function getRandomData() {
-
-  //     if (data.length > 0)
-  //       data = data.slice(1);
-
-  //     // Do a random walk
-
-  //     while (data.length < totalPoints) {
-
-  //       var prev = data.length > 0 ? data[data.length - 1] : 50,
-  //         y = prev + Math.random() * 10 - 5;
-
-  //       if (y < 0) {
-  //         y = 0;
-  //       } else if (y > 100) {
-  //         y = 100;
-  //       }
-
-  //       data.push(y);
-  //     }
-
-  //     // Zip the generated y values with the x values
-
-  //     var res = [];
-  //     for (var i = 0; i < data.length; ++i) {
-  //       res.push([j++, data[i]])
-  //     }
-
-  //     return res;
-  //   }
-
-  //   // Set up the control widget
-
-  //   var updateInterval = 3000;
-
-  //   var plot = $.plot(".cpu-chart", [ getRandomData() ], {
-  //     series: {
-  //       shadowSize: 0 // Drawing is faster without shadows
-  //     },
-  //     yaxis: {
-  //       min: 0,
-  //       max: 100
-  //     },
-  //     xaxis: {
-  //       show: true
-  //     }
-  //   });
-
-  //   function update() {
-
-  //     plot.setData([getRandomData()]);
-
-  //     plot.setupGrid(); // updating the grid
-
-  //     // Since the axes don't change, we don't need to call plot.setupGrid()
-
-  //     plot.draw();
-  //     setTimeout(update, updateInterval);
-  //   }
-
-  //   update();
-
-  // });
-
-  </script> -->
-  <!-- mem-chart -->
-<!--   <script type="text/javascript">
-
-    $(function() {
-
-      // We use an inline data source in the example, usually data would
-      // be fetched from a server
-
-      var data = [],
-        totalPoints = 300;
-        var j = [];
-
-      function getRandomData() {
-
-        if (data.length > 0)
-          data = data.slice(1);
-
-        // Do a random walk
-
-        while (data.length < totalPoints) {
-
-          var prev = data.length > 0 ? data[data.length - 1] : 50,
-            y = prev + Math.random() * 10 - 5;
-
-          if (y < 0) {
-            y = 0;
-          } else if (y > 100) {
-            y = 100;
-          }
-
-          data.push(y);
-        }
-
-        // Zip the generated y values with the x values
-
-        var res = [];
-        for (var i = 0; i < data.length; ++i) {
-          res.push([j++, data[i]])
-        }
-
-        return res;
-      }
-
-      // Set up the control widget
-
-      var updateInterval = 3000;
-
-      var plot = $.plot(".mem-chart", [ getRandomData() ], {
-        series: {
-          shadowSize: 0 // Drawing is faster without shadows
-        },
-        yaxis: {
-          min: 0,
-          max: 100
-        },
-        xaxis: {
-          show: true
-        }
-      });
-
-      function update() {
-
-        plot.setData([getRandomData()]);
-        plot.setupGrid();
-
-        // Since the axes don't change, we don't need to call plot.setupGrid()
-
-        plot.draw();
-        setTimeout(update, updateInterval);
-      }
-
-      update();
-    });
-
-  </script> -->
-
-  <!-- chart js graph -->
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("io-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- CPU chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("cpu-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-
-  <!-- i/o chart -->
-  <script type="text/javascript">
-
-    var ctx = document.getElementById("mem-chart").getContext("2d");
-    console.log(ctx);
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
-            responsive: true
-        }
-    });
-
-  </script>
-</body>
+ </body>
 
 </html>
