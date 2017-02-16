@@ -352,78 +352,180 @@
       <section class="content">
         <section class="content-header">
           <h1>
-            VOLUMES
+            CREATE NEW VOLUME
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.html">HOME</a></li>
-            <li class="active">VOLUMES</li>
+            <li><a href="volume_list.html">VOLUMES</a></li>
+            <li class="active">Create new Volume</li>
           </ol>
         </section>
 
         <div class="row">
           <div class="col-xs-12">
-            <div class="panel">
+            <section class="panel">
               <header class="panel-heading">
-                <i class="fa fa-th-list fa-fw" aria-hidden="true"></i> Volume List
+               <i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> New Volume
               </header>
-              <div class="panel-body table-responsive">
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
 
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Size</th>
-                      <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-stack-list">
-                    <tr>
-                      <td>asfasdfasd</td>
-                      <td><a href="volume_details.html">wp-logs</a></td>
-                      <td>2GB</td>
-                      <td>nfs</td>
-                      <td>/data/logs</td>
-                      <td>/var/nginx/logs</td>
-                      <td>
-                        <button class="btn btn-default btn-sm list-stack-action">
-                          <i class="fa fa-sliders" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm list-stack-action">
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>asfasdfasd</td>
-                      <td><a href="volume_details.html">db-data</a></td>
-                      <td>2GB</td>
-                      <td>nfs</td>
-                      <td>/data/mysql</td>
-                      <td>/var/lib/mysql/data</td>
-                      <td>
-                        <button class="btn btn-default btn-sm list-stack-action">
-                          <i class="fa fa-sliders" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm list-stack-action">
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                      </td>
-                    </tr>
-    
-                  </tbody>
-                </table>
-              </div><!-- /.box-body -->
-              <div class="panel-footer">
-                <a href="volume_create.html" class="btn btn-primary btn-block">CREATE NEW VOLUME</a href="volume_create.html">
+                  <div class="form-group">
+                    <label for="volumeName" class="col-md-2 col-sm-2 control-label">Volume Name</label>
+                    <div class="col-md-10">
+                      <input type="text" class="form-control" id="volumeName" placeholder="Volume name">
+                      <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="volumeSize" class="col-md-2 col-sm-2 control-label">Size</label>
+                    <div class="col-md-10">
+                      <input type="text" class="form-control" id="volumeSize" placeholder="Volume size">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="" class="col-md-2 col-sm-2 control-label">Type</label>
+                    <div class="col-md-10">
+                      <select class="form-control">
+                        <option>Bind</option>
+                        <option>NFS</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <button type="submit" class="btn btn-primary">CREATE VOLUME</button>
+                    </div>
+                  </div>
+
+                </form>
               </div>
-            </div><!-- /.box -->
+            </section>
+
+            <!-- modal -->
+            <!-- <section class="panel">
+              <div class="panel-body">
+                <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success">
+                  Form in Modal
+                </a>
+                <a href="#myModal-1" data-toggle="modal" class="btn btn-xs btn-warning">
+                  Form in Modal 2
+                </a>
+                <a href="#myModal-2" data-toggle="modal" class="btn btn-xs btn-danger">
+                  Form in Modal 3
+                </a>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                          <h4 class="modal-title">Form Tittle</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form role="form">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" id="exampleInputFile3">
+                            <p class="help-block">Example block-level help text here.</p>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Check me out
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-1" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Form Tittle</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <label for="inputEmail1" class="col-md-2 col-sm-2 control-label">Email</label>
+                            <div class="col-md-10">
+                              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputPassword1" class="col-md-2 col-sm-2 control-label">Password</label>
+                            <div class="col-md-10">
+                              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox"> Remember me
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                              <button type="submit" class="btn btn-default">Sign in</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-2" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Form Tittle</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-inline" role="form">
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control sm-input" id="exampleInputEmail5" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control sm-input" id="exampleInputPassword5" placeholder="Password">
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-default">Sign in</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
           </div>
         </div>
-
       </section>
       <!-- /.content -->
       
