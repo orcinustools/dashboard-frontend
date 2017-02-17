@@ -4279,6 +4279,22 @@ padding: 6px 10px;
   width: auto;
 }
 
+.text-bg {
+  color: #283744;
+}
+
+.welcome-greet {
+  font-size: 1.25em;
+  color: #39435C;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.btn-create {
+  background-color: #8bd0ee;
+  color: white;
+}
+
 .breadcrumb > li {
   font-size: .75em;
 }
@@ -4286,4 +4302,9 @@ padding: 6px 10px;
 .breadcrumb-sm {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
+}
+
+.welcome-hello {
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
