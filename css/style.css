@@ -4274,6 +4274,7 @@ padding: 6px 10px;
     min-width: 0px;
 }
 
-.img-katalog {
-  height: 50% !important;
+.thumbnail img {
+  height: 100px;
+  width: auto;
 }
