@@ -4278,3 +4278,12 @@ padding: 6px 10px;
   height: 100px;
   width: auto;
 }
+
+.breadcrumb > li {
+  font-size: .75em;
+}
+
+.breadcrumb-sm {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
