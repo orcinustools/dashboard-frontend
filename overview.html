@@ -303,7 +303,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
           <li class="active">
-            <a href="#">
+            <a href="overview.html">
               <i class="fa fa-dashboard"></i> <span>Overview</span>
             </a>
           </li>
@@ -351,25 +351,96 @@
       <!-- Main content -->
       <section class="content">
         
-<!--         <section class="content-header">
-          <h1>WELCOME</h1>
-          <ol class="breadcrumb">
+        <section class="content-header">
+          <h1>DASHBOARD</h1>
+          <ol class="breadcrumb breadcrumb-sm">
             <li class="active">HOME</li>
           </ol>
-        </section> -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel">
-              <div class="panel-body text-center">
-                <div class="col-md-12 welcome-hello">
-                  <h1 class="text-center text-bg">Welcome to Orcinus Dashboard</h1>
-                  <p class="welcome-greet">There is no application in your project stack. Let's create your first stack.</p>
+        </section>
 
-                  <a href="katalog_list.html" class="btn btn-info btn-create btn-lg">CREATE STACK</a>
+        <div class="row" style="margin-bottom:5px;">
+          
+          <a href="stack_list.html">
+            <div class="col-md-4">
+              <div class="sm-st clearfix">
+                <span class="sm-st-icon st-red"><i class="fa fa-server"></i></span>
+                <div class="sm-st-info">
+                  <span>4</span> Stack Running
                 </div>
               </div>
             </div>
+          </a>
+
+          <a href="service_list.html">
+            <div class="col-md-4">
+              <div class="sm-st clearfix">
+                <span class="sm-st-icon st-violet"><i class="fa fa-cubes"></i></span>
+                <div class="sm-st-info">
+                  <span>2</span> Services Running
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="container_list.html">
+            <div class="col-md-4">
+              <div class="sm-st clearfix">
+                <span class="sm-st-icon st-blue"><i class="fa fa-cube"></i></span>
+                <div class="sm-st-info">
+                  <span>2</span> Containers Running
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Main row -->
+        <div class="row">
+
+          <div class="col-md-12">
+            <!--I/O Chart start-->
+            <section class="panel">
+              <header class="panel-heading">
+                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> Network Usage
+              </header>
+              <div class="panel-body">
+                <div class="chart-container">
+                  <canvas id="io-chart" height="60"></canvas>
+                </div>
+              </div>
+            </section>
+            <!--I/O Chart end-->
           </div>
+          <div class="col-md-12">
+            <!--I/O Chart start-->
+            <section class="panel">
+              <header class="panel-heading">
+                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> CPU Usage
+              </header>
+              <div class="panel-body">
+                <div class="chart-container">
+                  <canvas id="cpu-chart" height="60"></canvas>
+                </div>
+              </div>
+            </section>
+            <!--I/O Chart end-->
+          </div>
+          <div class="col-md-12">
+            <!--I/O Chart start-->
+            <section class="panel">
+              <header class="panel-heading">
+                <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i> Memory Usage
+              </header>
+              <div class="panel-body">
+                <div class="chart-container">
+                  <canvas id="mem-chart" height="60"></canvas>
+                </div>
+              </div>
+            </section>
+            <!--I/O Chart end-->
+          </div>
+
         </div>
 
       </section>
@@ -448,6 +519,210 @@
     });
   </script>
 
+
+  <!-- Net I/O Usage using ChartJS-->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var count = 10;
+      var data = {
+          labels : ["1","2","3","4","5", "6", "7", "8", "9", "10"],
+          datasets : [
+            {
+              label: "Upload",
+              backgroundColor : "rgba(249, 245, 6, 0.5)",
+              borderColor : "rgba(245, 171, 53,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              data : [65,59,90,81,56,45,30,20,3,37]
+            },
+            {
+              label: "Download",
+              fillColor : "rgba(6, 10, 249, 0.5)",
+              borderColor : "rgba(68,108,179,1)",
+              pointColor : "rgba(151,187,205,1)",
+              pointStrokeColor : "#fff",
+              data : [34,56,12,81,2,45,16,32,1,21]
+            }
+          ]
+      }
+
+      var updateData = function(oldData){
+        // selector untuk mengambil element labels dari variable data
+        var labels = oldData["labels"];
+
+        // selector untuk mengambil element datasets dari variable data
+        var dataSetA = oldData["datasets"][0]["data"];
+        var dataSetB = oldData["datasets"][1]["data"];
+
+        // Menghapus labels awal pada axis s pada array labels
+        labels.shift();
+
+        count++;
+        //var timeStamp = new Date().get;
+
+        // menambahkan label baru pada axis x pada array labels
+        labels.push(count.toString());
+
+        // membuat sebuah data baru yang akan dimasukkan ke array labels
+        var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+        var newDataB = dataSetB[9] + (20 - Math.floor(Math.random() * (41)));
+
+        // menambahkan data baru ke array dataset
+        dataSetA.push(newDataA);
+        dataSetB.push(newDataB);
+
+        // menghapus data awal pada array dataset
+        dataSetA.shift();
+        dataSetB.shift();
+      };
+
+      //Get the context of the canvas element we want to select
+      var ctx = document.getElementById("io-chart").getContext("2d");
+      var myNewChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          animation: false
+        }
+      });
+      //myNewChart.Line(data, optionsAnimation);  
+
+      setInterval(function(){
+        updateData(data);
+        myNewChart.update();
+         }, 1000
+      );
+
+    });
+  </script>
+
+  <!-- Memory Usage using ChartJS-->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var count = 10;
+      var data = {
+          labels : ["1","2","3","4","5", "6", "7", "8", "9", "10"],
+          datasets : [
+            {
+              label: "Memory Usage (MB)",
+              backgroundColor : "rgba(145, 61, 136, 0.5)",
+              borderColor : "rgba(102, 51, 153,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              data : [65,59,90,81,56,45,30,20,3,37]
+            }
+          ]
+      }
+
+      var updateData = function(oldData){
+        // selector untuk mengambil element labels dari variable data
+        var labels = oldData["labels"];
+
+        // selector untuk mengambil element datasets dari variable data
+        var dataSet = oldData["datasets"][0]["data"];
+
+        // Menghapus labels awal pada axis s pada array labels
+        labels.shift();
+
+        count++;
+        //var timeStamp = new Date().get;
+
+        // menambahkan label baru pada axis x pada array labels
+        labels.push(count.toString());
+
+        // membuat sebuah data baru yang akan dimasukkan ke array labels
+        var newData = dataSet[9] + (20 - Math.floor(Math.random() * (41)));
+
+        // menambahkan data baru ke array dataset
+        dataSet.push(newData);
+
+        // menghapus data awal pada array dataset
+        dataSet.shift();
+      };
+
+      //Get the context of the canvas element we want to select
+      var ctx = document.getElementById("mem-chart").getContext("2d");
+      var myNewChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          animation: false
+        }
+      });
+      //myNewChart.Line(data, optionsAnimation);  
+
+      setInterval(function(){
+        updateData(data);
+        myNewChart.update();
+         }, 1000
+      );
+
+    });
+  </script>
+
+    <!-- CPU Usage using ChartJS-->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var count = 10;
+      var data = {
+          labels : ["1","2","3","4","5", "6", "7", "8", "9", "10"],
+          datasets : [
+            {
+              label: "Percentage (%)",
+              backgroundColor : "rgba(46, 204, 113, 0.5)",
+              borderColor : "rgba(46, 204, 113,1)",
+              pointColor : "rgba(220,220,220,1)",
+              pointStrokeColor : "#fff",
+              data : [65,59,90,81,56,45,30,20,3,37]
+            }
+          ]
+      }
+
+      var updateData = function(oldData){
+        // selector untuk mengambil element labels dari variable data
+        var labels = oldData["labels"];
+
+        // selector untuk mengambil element datasets dari variable data
+        var dataSet = oldData["datasets"][0]["data"];
+
+        // Menghapus labels awal pada axis s pada array labels
+        labels.shift();
+
+        count++;
+        //var timeStamp = new Date().get;
+
+        // menambahkan label baru pada axis x pada array labels
+        labels.push(count.toString());
+
+        // membuat sebuah data baru yang akan dimasukkan ke array labels
+        var newData = dataSet[9] + (30 - Math.floor(Math.random() * (50)));
+
+        // menambahkan data baru ke array dataset
+        dataSet.push(newData);
+
+        // menghapus data awal pada array dataset
+        dataSet.shift();
+      };
+
+      //Get the context of the canvas element we want to select
+      var ctx = document.getElementById("cpu-chart").getContext("2d");
+      var myNewChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          animation: false
+        }
+      });
+      //myNewChart.Line(data, optionsAnimation);  
+
+      setInterval(function(){
+        updateData(data);
+        myNewChart.update();
+         }, 1000
+      );
+
+    });
+  </script>
 </body>
 
 </html>
