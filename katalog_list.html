@@ -359,11 +359,10 @@
           </ol>
         </section>
 
-        <div class="row" style="margin-bottom:5px;">
-          
-          <div class="col-md-3">
+        <div class="row col-eq">
+          <div class="col-md-2">
             <a href="stack_list.html">
-              <div class="thumbnail">
+              <div class="thumbnail" style="height: 100%;">
                 <img src="img/katalog/wordpress.png" alt="MySQL" class="img-responsive">
                 <div class="caption text-center">
                   <h3>Wordpress</h3> 
@@ -375,9 +374,9 @@
             </a>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-2">
             <a href="stack_list.html">
-              <div class="thumbnail">
+              <div class="thumbnail" style="height: 100%;">
                 <img src="img/katalog/mysql.png" alt="MySQL" class="img-responsive">
                 <div class="caption text-center">
                   <h3>MySQL 5.6</h3> 
@@ -389,9 +388,9 @@
             </a>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-2">
             <a href="stack_list.html">
-              <div class="thumbnail">
+              <div class="thumbnail" style="height: 100%;">
                 <img src="img/katalog/golang.png" alt="MySQL" class="img-responsive">
                 <div class="caption text-center">
                   <h3>Golang</h3> 
@@ -403,9 +402,9 @@
             </a>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-2">
             <a href="stack_list.html">
-              <div class="thumbnail">
+              <div class="thumbnail" style="height: 100%;">
                 <img src="img/katalog/node.png" alt="MySQL" class="img-responsive">
                 <div class="caption text-center">
                   <h3>NodeJS</h3> 
@@ -438,6 +437,9 @@
   <!-- jQuery 2.0.2 -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <script src="js/jquery.min.js" type="text/javascript"></script>
+
+  <!-- jQuery colequal -->
+  <script src="js/plugins/colequalizer/bootstrap-colequalizer.js" type="text/javascript"></script>
 
   <!-- jQuery UI 1.10.3 -->
   <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
@@ -496,6 +498,10 @@
       checkboxClass: 'icheckbox_flat-grey',
       radioClass: 'iradio_flat-grey'
     });
+  </script>
+
+  <script>
+    $('.col-eq').colequalizer();
   </script>
 
 </body>
