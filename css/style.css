@@ -4273,3 +4273,7 @@ padding: 6px 10px;
 .dropdown-min {
     min-width: 0px;
 }
+
+.img-katalog {
+  height: 50% !important;
+}
