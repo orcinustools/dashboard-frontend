@@ -25,6 +25,8 @@
   <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
   <!-- iCheck for checkboxes and radio inputs -->
   <link href="css/iCheck/all.css" rel="stylesheet" type="text/css" />
+  <!-- bootstrap select -->
+  <link href="css/bootstrap-select/bootstrap-select.css" rel="stylesheet" type="text/css" />
   <!-- bootstrap wysihtml5 - text editor -->
   <!-- <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -406,40 +408,80 @@
               <div class="panel-body">
                 <div class="form-horizontal">
                   <div class="form-group">
-                    <div class="col-sm-2"><b>SERVICE NAME</b></div>
-                    <div class="col-sm-10">wp-app</div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-2"><b>STACK NAME</b></div>
+                    <label class="col-sm-2 control-label">SERVICE NAME</label>
                     <div class="col-sm-10">
-                      <a href="stack_details.html">Worpress-app</a>
+                      <input type="text" class="form-control" name="inputServiceName" value="wp-app" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-sm-2"><b>CREATED AT</b></div>
-                    <div class="col-sm-10">Mon Feb 13 2017 17:59:04 GMT+0700 (WIB)</div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-2"><b>IMAGE TAG</b></div>
+                    <label class="col-sm-2 control-label">IMAGE TAG</label>
                     <div class="col-sm-10">
-                      <i class="fa fa-tag fa-fw" aria-hidden="true"></i>orcinus/wordpress-app:latest
+                      <p class="form-control-static d-inline-block" style="margin-right: 10px;">
+                        <i class="fa fa-tag fa-fw" aria-hidden="true"></i> orcinus/wordpress-app
+                      </p>
+                      <select name="imageTag" id="imageTag" class="selectpicker" data-width="fit">
+                        <option value="latest">latest</option>
+                        <option value="beta">beta</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-sm-2"><b>NUM OF CONTAINER</b></div>
+                    <label class="col-sm-2 control-label">STACK NAME</label>
                     <div class="col-sm-10">
-                      <i class="fa fa-cube fa-fw" aria-hidden="true"></i> 1 Container
+                      <select name="selectStackName" id="selectStackName" class="selectpicker" data-width="fit">
+                        <option value="wordpress-app">Wordpress-app</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-sm-2"><b>NUM OF VOLUMES</b></div>
-                    <div class="col-sm-10">
-                      <i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volume
+                    <label class="col-sm-2 control-label">REPLICATED</label>
+                    <div class="col-sm-1">
+                      <input type="number" class="form-control" value="1" min="1" max="10" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-sm-2"><b>REPLICATED</b></div>
-                    <div class="col-sm-10">1</div>
+                    <label class="col-sm-2 control-label">CONTAINERS</label>
+                    <div class="col-sm-10">
+                      <p class="form-control-static">
+                        <i class="fa fa-cube fa-fw" aria-hidden="true"></i> 1 Container
+                      </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">VOLUMES</label>
+                    <div class="col-sm-10">
+                      <p class="form-control-static">
+                        <i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> 1 Volume
+                      </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">AUTO RESTART</label>
+                    <div class="col-sm-4">
+                      <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">  Off
+                      </label>
+                      <label class="radio-inline"> 
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> On Failure
+                      </label>
+                      <label class="radio-inline"> 
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Always
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">AUTO REDEPLOY</label>
+                    <div class="col-sm-4">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="yes"> Yes
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">CREATED AT</label>
+                    <div class="col-sm-10">
+                      <p class="form-control-static">Mon Feb 13 2017 17:59:04 GMT+0700 (WIB)</p>
+                    </div>
                   </div>
                 </div>
               </div><!-- /.box-body -->
@@ -485,9 +527,6 @@
                   </tbody>
                 </table>
               </div><!-- /.box-body -->
-              <div class="panel-footer">
-                <button class="btn btn-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>  Add New Container</button>
-              </div>
             </div><!-- /.box -->
           </div>
         </div>
@@ -505,18 +544,20 @@
                       <th>Name</th>
                       <th>Size</th>
                       <th>Type</th>
-                      <th>Source</th>
-                      <th>Target</th>
+                      <th>Status</th>
+                      <th>Used</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody class="table-stack-list">
                     <tr>
-                      <td><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-logs</a></td>
+                      <td><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-vol</a></td>
                       <td>2GB</td>
                       <td>nfs</td>
-                      <td>/data/logs</td>
-                      <td>/var/nginx/logs</td>
+                      <td>
+                        <span class="label label-success">Mounted</span>
+                      </td>
+                      <td>150 MB</td>
                       <td>
                         <button class="btn btn-default list-stack-action">
                           <i class="fa fa-sliders" aria-hidden="true"></i>
@@ -530,11 +571,285 @@
                 </table>
               </div><!-- /.box-body -->
               <div class="panel-footer">
-                <button class="btn btn-success">
-                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i>  Add New Volume
-                </button>
+                <a href="#modalAddVolume" data-toggle="modal" class="btn btn-success btn-sm list-stack-action"><i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Volume</a>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalAddVolume" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Add Volume</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <label for="inputVolumeName" class="col-lg-3 col-sm-3 control-label">
+                              Volume Name
+                            </label>
+                            <div class="col-lg-8">
+                              <select name="selectVolumeName" id="selectVolumeName" class="selectpicker" title="Select the volume name">
+                                <option value="wp-vol" data-icon="fa fa-hdd-o fa-fw">
+                                  wp-vol
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-lg-8 col-md-offset-3">
+                              <button type="submit" class="btn btn-block btn-success">Add Volume</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- /.box -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Mountpoint
+              </header>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Volume Name</th>
+                      <th>Used</th>
+                      <th>Source</th>
+                      <th>Target</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td><i class="fa fa-code-fork fa-fw" aria-hidden="true"></i> <a href="volume_details.html">codeBase</a></td>
+                      <td><i class="fa fa-hdd-o fa-fw" aria-hidden="true"></i> <a href="volume_details.html">wp-vol</a></td>
+                      <td>150 MB of 2 GB</td>
+                      <td>/wp-vol/src/</td>
+                      <td>/var/www/wp-app/</td>
+                      <td>
+                        <button class="btn btn-default list-stack-action">
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-danger list-stack-action">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- /.box-body -->
+              <div class="panel-footer">
+                <a href="#modalAddVolumeMountpoint" data-toggle="modal" class="btn btn-success btn-sm list-stack-action"><i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Mountpoint</a>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalAddVolumeMountpoint" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Add Volume</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <label for="inputVolumeName" class="col-lg-3 col-sm-3 control-label">
+                              Volume Name
+                            </label>
+                            <div class="col-lg-8">
+                              <select name="selectVolumeName" id="selectVolumeName" class="selectpicker" title="Select the volume name">
+                                <option value="wp-vol" data-icon="fa fa-hdd-o fa-fw">
+                                  wp-vol
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputVolumeName" class="col-lg-3 col-sm-3 control-label">
+                              Mountpoint
+                            </label>
+                            <div class="col-lg-8 select-container">
+                              <select name="selectMountpoint" id="selectMountpoint" class="selectpicker" title="Select the mount point" >
+                                <option value="mysql-data" data-icon="fa fa-code-fork fa-fw">
+                                  mysql-data
+                                </option>
+                                <option value="mysql-data" data-icon="fa fa-code-fork fa-fw">
+                                  codeBase
+                                </option>
+                                <option value="mysql-data" data-icon="fa fa-code-fork fa-fw">
+                                  web-logs
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-lg-8 col-md-offset-3">
+                              <button type="submit" class="btn btn-block btn-success">Add Volume</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.box -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel">
+              <header class="panel-heading">
+                Ports
+              </header>
+              <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Container Port</th>
+                      <th>Protocol</th>
+                      <th>Publish</th>
+                      <th>Host Port</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-stack-list">
+                    <tr>
+                      <td>80</td>
+                      <td>TCP</td>
+                      <td><span class="label label-success">YES</span></td>
+                      <td>80</td>
+                      <td>
+                        <a href="#modalEditPort" data-toggle="modal" class="btn btn-default btn-sm list-stack-action"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalEditPort" class="modal fade">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                <h4 class="modal-title">Edit Port</h4>
+                              </div>
+                              <div class="modal-body">
+                                <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                    <label for="inputContainerPort" class="col-lg-3 col-sm-3 control-label">
+                                      Container Port
+                                    </label>
+                                    <div class="col-lg-8">
+                                      <input type="text" class="form-control" id="inputContainerPort" placeholder="Container Port" value="80">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputContainerPort" class="col-lg-3 col-sm-3 control-label">
+                                      Protocol
+                                    </label>
+                                    <div class="col-lg-3">
+                                      <select name="inputProtocol" id="inputProtocol" class="selectpicker" data-width="fit">
+                                        <option value="tcp" selected="true">TCP</option>
+                                        <option value="udp">UDP</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputIsPublished" class="col-lg-3 col-sm-3 control-label">Publish Port</label>
+                                    <div class="col-lg-8">
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="inputIsPublished" checked="true"> Yes
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputHostPort" class="col-lg-3 col-sm-3 control-label">Host Port</label>
+                                    <div class="col-lg-8">
+                                      <input type="text" class="form-control" id="inputHostPort" placeholder="Host Port" value="80">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="col-lg-8 col-md-offset-3">
+                                      <button type="submit" class="btn btn-block btn-success">Edit Port</button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a href="#" class="btn btn-danger btn-sm list-stack-action"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="panel-footer">
+                <a href="#modalAddPort" data-toggle="modal" class="btn btn-sm btn-success">
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add New Port
+                </a>
+
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modalAddPort" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Add New Port</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <label for="inputContainerPort" class="col-lg-3 col-sm-3 control-label">
+                              Container Port
+                            </label>
+                            <div class="col-lg-8">
+                              <input type="text" class="form-control" id="inputContainerPort" placeholder="Container Port">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputContainerPort" class="col-lg-3 col-sm-3 control-label">
+                              Protocol
+                            </label>
+                            <div class="col-lg-3">
+                              <select name="inputProtocol" id="inputProtocol" class="selectpicker" data-width="fit">
+                                <option value="tcp">TCP</option>
+                                <option value="udp">UDP</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputIsPublished" class="col-lg-3 col-sm-3 control-label">Publish Port</label>
+                            <div class="col-lg-8">
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" id="inputIsPublished"> Yes
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputHostPort" class="col-lg-3 col-sm-3 control-label">Host Port</label>
+                            <div class="col-lg-8">
+                              <input type="text" class="form-control" id="inputHostPort" placeholder="Host Port">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-lg-8 col-md-offset-3">
+                              <button type="submit" class="btn btn-block btn-success">Add Port</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -630,6 +945,9 @@
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
   <!-- daterangepicker -->
   <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+  <!-- bootstrap select -->
+  <script src="js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
 
   <script src="js/plugins/Chart.js" type="text/javascript"></script>
 
