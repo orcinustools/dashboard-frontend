@@ -4312,3 +4312,8 @@ padding: 6px 10px;
 .navbar-right-fix {
   margin-right: 0px !important;
 }
+
+.table-responsive {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
