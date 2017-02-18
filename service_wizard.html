@@ -401,42 +401,40 @@
               <div class="panel-body">
                 <div class="form-horizontal">
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">IMAGE</label>
-                    <div class="col-sm-9">
-                      <div class="col-sm-3">
-                        <p class="form-control-static">MySQL</p>
-                      </div>
-                      <div class="col-sm-3">
-                        <select name="image-tag" id="image-tag" class="selectpicker" data-width="fit">
-                          <option value="latest">latest</option>
-                          <option value="5.6">5.6</option>
-                          <option value="5.7">5.7</option>
-                        </select>
-                      </div>                        
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">SERVICE NAME</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" placeholder="Service Name" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">ADD TO STACK</label>
-                    <div class="col-sm-9">
-                      <select name="stack" id="stack" class="selectpicker form-control" title="Select a Stack">
-                        <option value="1">Wordpress-app</option>
+                    <label class="col-sm-2 control-label">IMAGE</label>
+                    <div class="col-sm-10">
+                      <p class="form-control-static d-inline-block" style="margin-right: 10px;">
+                       <i class="fa fa-tag fa-fw" aria-hidden="true"></i> orcinus.io/mysql
+                      </p>
+                      <select name="image-tag" id="image-tag" class="selectpicker" data-width="fit">
+                        <option value="latest">latest</option>
+                        <option value="5.6">5.6</option>
+                        <option value="5.7">5.7</option>
                       </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">NUMBER OF CONTAINER</label>
-                    <div class="col-sm-2">
+                    <label class="col-sm-2 control-label">SERVICE NAME</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" placeholder="Service Name" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">ADD TO STACK</label>
+                    <div class="col-sm-10">
+                      <select name="stack" id="stack" class="selectpicker" title="Select a Stack">
+                        <option value="wordpress-app" data-icon="fa fa-server fa-fw"> Wordpress-app</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">NUM. OF CONTAINER</label>
+                    <div class="col-sm-1">
                       <input type="number" class="form-control" min="1" max="10" value="1" />
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">AUTO RESTART</label>
+                    <label class="col-sm-2 control-label">AUTO RESTART</label>
                     <div class="col-sm-4">
                       <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">  Off
@@ -450,7 +448,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label">AUTO REDEPLOY</label>
+                    <label class="col-sm-2 control-label">AUTO REDEPLOY</label>
                     <div class="col-sm-4">
                       <label class="checkbox-inline">
                         <input type="checkbox" id="inlineCheckbox1" value="yes"> Yes
