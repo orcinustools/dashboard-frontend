@@ -4321,3 +4321,14 @@ padding: 6px 10px;
 .d-inline-block {
   display: inline-block !important;
 }
+
+.form-group-header {
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.hr-small {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
