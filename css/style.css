@@ -875,7 +875,7 @@ content: '';
   padding: 0;
 }
 .sidebar .sidebar-menu > li > a {
-  padding: 12px 5px 12px 15px;
+  padding: 12px 5px 12px 25px;
   display: block;
 }
 .sidebar .sidebar-menu > li > a > .fa,
@@ -2956,13 +2956,14 @@ vertical-align: top;
   border-bottom: 1px solid #39435C;
 }
 .skin-black .sidebar > .sidebar-menu > li {
-  /*border-top: 1px solid #333;
+/*  border-top: 1px solid #333;
   border-bottom: 0px solid #444;*/
 }
 .skin-black .sidebar > .sidebar-menu > li.nav-header {
   color: #eee;
   font-size: .75em;
   padding: 12px 5px 12px 15px;
+  margin-top: 15px;
   text-transform: uppercase;
 }
 .skin-black .sidebar > .sidebar-menu > li:first-of-type {
